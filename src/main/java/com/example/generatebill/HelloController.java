@@ -19,6 +19,7 @@ public class HelloController {
     @FXML
     Button iniciaSesion;
     Stage stage;
+    @FXML
     Parent root;
     Scene scene;
 
