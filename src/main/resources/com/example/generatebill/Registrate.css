@@ -1,0 +1,17 @@
+.root{
+    -fx-background-color: #2f4f4f;
+}
+.label{
+    -fx-font-size: 40;
+    -fx-font-family: "Cambria", Helvetica, Arial, sans-serif;
+    -fx-text-fill: #f08080;
+}
+.labelPeque{
+    -fx-font-size: 20;
+    -fx-font-fill:#daa520;
+}
+.TextField{
+    -fx-background-border: 30;
+    -fx-border-color: #000080;
+    -fx-padding: 12px 20px;
+}

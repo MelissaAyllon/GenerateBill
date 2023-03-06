@@ -9,9 +9,14 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage){
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());  //Se puede anadir un marco de referencia (dimensiones de inicio de la ventana)
+        Scene scene = null;  //Se puede anadir un marco de referencia (dimensiones de inicio de la ventana)
+        try {
+            scene = new Scene(fxmlLoader.load());
+        } catch (IOException e) {
+            throw new RuntimeException("El archivo no se ha cargado, revisarlo.");
+        }
         scene.getStylesheets().add(getClass().getResource("Styles.css").toExternalForm());
         stage.setTitle("Hello!");
         stage.setScene(scene);

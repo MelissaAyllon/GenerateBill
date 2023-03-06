@@ -31,6 +31,13 @@ public class HelloController {
             try {
                 registro(event);
             } catch (IOException e) {
+                throw new RuntimeException("No se ha obtenido el evento");
+            }
+        });
+        iniciaSesion.setOnAction(event -> {
+            try {
+                inicioSesion(event);
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });
@@ -44,5 +51,12 @@ public class HelloController {
         stage.show();
     }
 
+    public void inicioSesion(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("InicioSesion.fxml"));
+        scene = new Scene(root);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 
 }
